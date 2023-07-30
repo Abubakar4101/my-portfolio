@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Head from "next/head";
 import Layout from "@/components/Layout";
 import AnimeHeading from "@/components/AnimeHeading";
@@ -7,7 +7,6 @@ import profilePic from "../../public/images/projects/crypto-screener-cover-image
 import Link from "next/link";
 import {motion} from "framer-motion";
 import { GithubIcon, LinkArrow} from "@/components/Icons";
-import AnimatedCursor from "@/components/AnimatedCursor";
 import TransitionPage from "@/components/TransitionPage";
 
 const ProjectContainer = ({thumbnail, typeOfProject, title, detail, gitLink, liveLink, containerClass, isHovered}) => {

@@ -21,8 +21,7 @@ const Details = ({study, date, institute, detail, isHovered}) => {
 
 const Education = ({isHovered}) => {
     const ref = useRef(null)
-    const { scrollYProgress } = useScroll(
-        {
+    const { scrollYProgress } = useScroll({
             target: ref,
             offset: ["start end", "center start"]
         }

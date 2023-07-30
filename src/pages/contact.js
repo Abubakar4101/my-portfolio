@@ -21,7 +21,7 @@ const Contact = ({isHovered}) => {
                         <AnimeHeading isHovered={isHovered} text={"Get in Touch"}/>
                         <p className="mt-5 text-dark/75 font-medium dark:text-light/75"
                            onMouseOver={() => isHovered("hovered")} onMouseLeave={() => isHovered("default")}
-                        >I'm always here to chat, and I'm
+                        >I&apos;m always here to chat, and I&apos;m
                             happy to help with anything you need.
                         </p>
                     </div>
@@ -35,7 +35,7 @@ const Contact = ({isHovered}) => {
                                </svg>
                             </span>
                             <h2 className="mt-4 text-lg font-bold text-dark/90 dark:text-light/90">Email</h2>
-                            <p className="mt-2 text-dark/75 font-medium dark:text-light/75">I'm here to help you in any
+                            <p className="mt-2 text-dark/75 font-medium dark:text-light/75">I&apos;m here to help you in any
                                 way I can.
                             </p>
                             <p className="mt-2 text-blue-500 dark:text-blue-400">dev.abubakarsiddique@gmail.com</p>
@@ -64,7 +64,7 @@ const Contact = ({isHovered}) => {
                                </svg>
                             </span>
                             <h2 className="mt-4 text-lg font-bold text-dark/90 dark:text-light/90">Phone</h2>
-                            <p className="mt-2 text-dark/75 font-medium dark:text-light/75">Let's Talk</p>
+                            <p className="mt-2 text-dark/75 font-medium dark:text-light/75">Let&apos;s Talk</p>
                             <p className="mt-2 text-blue-500 dark:text-blue-400">+92 349 4101 609</p>
                         </div>
                     </div>

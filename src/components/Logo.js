@@ -1,10 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import Link from "next/link";
 import {motion} from "framer-motion";
 
 const MotionLink = motion(Link);
 
-const Logo = ({isHovered, theme}) => {
+const Logo = ({isHovered}) => {
 
     return (
         <>

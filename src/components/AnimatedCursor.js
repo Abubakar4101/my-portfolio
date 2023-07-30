@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import {motion} from 'framer-motion'
-import {useTheme} from "next-themes";
 const AnimatedCursor = ({state}) => {
     const [cursorPos, setCursorPos] = useState({
         x: 0,

@@ -1,14 +1,13 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useEffect, useRef} from 'react';
 import Head from 'next/head'
 import Layout from "@/components/Layout";
 import AnimeHeading from "@/components/AnimeHeading";
 import profilePic from "../../public/images/profile/developer-pic-5.png"
 import Image from "next/image";
-import {useInView, useMotionValue, useScroll, useSpring} from "framer-motion";
+import {useInView, useMotionValue, useSpring} from "framer-motion";
 import Skills from "@/components/Skills";
 import Education from "@/components/Education";
 import {motion} from "framer-motion";
-import AnimatedCursor from "@/components/AnimatedCursor";
 import TransitionPage from "@/components/TransitionPage";
 
 const AnimatedNumbers = ({value, className="", isHovered}) => {
@@ -51,17 +50,17 @@ const About = ({isHovered}) => {
                                     Biography
                                 </h2>
                                 <p className="pt-3 font-medium text-dark dark:text-light" onMouseOver={() => isHovered("hovered")} onMouseLeave={() => isHovered("default")}>
-                                    Hi, I'm M.Abubakar Siddique, a full stack web developer with a passion for creating beautiful, functional,
+                                    Hi, I&apos;m M.Abubakar Siddique, a full stack web developer with a passion for creating beautiful, functional,
                                     and user-centered digital experiences. With 2 years of professional experience in the field. I am always looking for
-                                    new and innovative ways to bring my clients' visions to life.
+                                    new and innovative ways to bring my clients&apos; visions to life.
                                 </p>
                                 <p className="pt-3 font-medium text-dark dark:text-light" onMouseOver={() => isHovered("hovered")} onMouseLeave={() => isHovered("default")}>
-                                    I believe that design is about more than just making things look pretty – it's about solving problems and
+                                    I believe that design is about more than just making things look pretty – it&apos;s about solving problems and
                                     creating intuitive, enjoyable experiences for users.
                                 </p>
 
                                 <p className="pt-3 font-medium text-dark dark:text-light" onMouseOver={() => isHovered("hovered")} onMouseLeave={() => isHovered("default")}>
-                                    Whether I'm working on a website, mobile app, or
+                                    Whether I&apos;m working on a website, mobile app, or
                                     other digital product, I bring my commitment to design excellence and user-centered thinking to
                                     every project I work on. I look forward to the opportunity to bring my skills and passion to your next project.
                                 </p>

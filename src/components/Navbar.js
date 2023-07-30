@@ -56,7 +56,7 @@ const Navbar = ({isHovered}) => {
     };
     useEffect(() => {
         isOpened ? showMenu("flex") : showMenu("hidden")
-        const handleRouteChange = (url) => {
+        const handleRouteChange = () => {
             showMenu("hidden")
             setIsOpened(false)
         };
