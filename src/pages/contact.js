@@ -5,7 +5,7 @@ import AnimeHeading from "@/components/AnimeHeading";
 import {motion} from "framer-motion";
 import Head from "next/head";
 import TransitionPage from "@/components/TransitionPage";
-import React, {useEffect, useState} from "react";
+import React, { useState} from "react";
 import {sendMail} from "@/lib/api";
 
 const Contact = ({isHovered}) => {
@@ -37,6 +37,9 @@ const Contact = ({isHovered}) => {
                 setValues(initialValues)
                 setMessageSend(true)
                 setIsError(false)
+                setTimeout(() => {
+                    setMessageSend(false)
+                }, 4000)
             });
         }
         catch (error){
