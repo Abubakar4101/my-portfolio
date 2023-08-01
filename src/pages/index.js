@@ -57,7 +57,7 @@ export default function Home({isHovered}) {
                                     Resume
                                     <LinkArrow className="dark:text-dark" />
                                 </Link>
-                                <Link href="/" className="btn btn-accent dark:btn-primary" onMouseOver={() => isHovered("hovered")} onMouseLeave={() => isHovered("default")}>
+                                <Link href="mailto:dev.abubakarsiddique@gmail.com" className="btn btn-accent dark:btn-primary" onMouseOver={() => isHovered("hovered")} onMouseLeave={() => isHovered("default")}>
                                     Contact
                                     <ContactIcon className="dark:text-light"/>
                                 </Link>

@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+'use client';
 import Head from "next/head";
 import Layout from "@/components/Layout";
 import AnimeHeading from "@/components/AnimeHeading";
@@ -10,7 +10,6 @@ import Link from "next/link";
 import {motion} from "framer-motion";
 import { GithubIcon, LinkArrow} from "@/components/Icons";
 import TransitionPage from "@/components/TransitionPage";
-
 
 const ProjectContainer = ({
                               thumbnail,

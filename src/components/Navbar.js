@@ -4,7 +4,14 @@ import NavItems from "@/components/NavItems";
 import {useRouter} from "next/router";
 import Link from "next/link";
 import {motion} from "framer-motion";
-import {GithubIcon, LinkedInIcon, MoonIcon, PinterestIcon, SunIcon, TwitterIcon} from "@/components/Icons";
+import {
+    Facebook,
+    GithubIcon,
+    LinkedInIcon,
+    MoonIcon,
+    SunIcon,
+    Youtube
+} from "@/components/Icons";
 import {useTheme} from "next-themes";
 
 const CustomLink = ({href, title, hoveredProp}) => {
@@ -107,25 +114,25 @@ const Navbar = ({isHovered}) => {
                         <CustomLink href="/contact" title="Contact" hoveredProp={isHovered}/>
                     </nav>
                     <nav className=" flex items-center justify-between gap-3 flex-wrap ">
-                        <motion.a href="#" target={"_blank"} className="w-5" whileHover={{y: -2}}
+                        <motion.a href="https://github.com/Abubakar4101" target={"_blank"} className="w-5" whileHover={{y: -2}}
                                   whileTap={{scale: 0.9}}
                                   onMouseOver={() => isHovered("hovered")} onMouseLeave={() => isHovered("default")}
                         >
                             <GithubIcon className="text-light dark:text-dark w-full h-auto md:text-dark dark:md:text-light "/>
                         </motion.a>
-                        <motion.a href="#" target={"_blank"} className="w-5" whileHover={{y: -2}}
+                        <motion.a href="https://www.youtube.com/@abtechworld7115/featured" target={"_blank"} className="w-5" whileHover={{y: -2}}
                                   whileTap={{scale: 0.9}}
                                   onMouseOver={() => isHovered("hovered")} onMouseLeave={() => isHovered("default")}
                         >
-                            <PinterestIcon/>
+                            <Youtube/>
                         </motion.a>
-                        <motion.a href="#" target={"_blank"} className="w-5" whileHover={{y: -2}}
+                        <motion.a href="https://www.facebook.com/malik.prince.9615" target={"_blank"} className="w-5" whileHover={{y: -2}}
                                   whileTap={{scale: 0.9}}
                                   onMouseOver={() => isHovered("hovered")} onMouseLeave={() => isHovered("default")}
                         >
-                            <TwitterIcon/>
+                            <Facebook/>
                         </motion.a>
-                        <motion.a href="#" target={"_blank"} className="w-5" whileHover={{y: -2}}
+                        <motion.a href="https://www.linkedin.com/in/abDeveloper/" target={"_blank"} className="w-5" whileHover={{y: -2}}
                                   whileTap={{scale: 0.9}}
                                   onMouseOver={() => isHovered("hovered")} onMouseLeave={() => isHovered("default")}
                         >
