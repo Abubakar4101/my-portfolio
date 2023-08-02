@@ -17,10 +17,8 @@ export default function handler(req, res) {
     }
     try {
       transporter.sendMail({
-        sender: data.email,
-        to: 'dev.abubakarsiddique@gmail.com',
         from: data.email,
-        replyTo: data.email,
+        to: 'dev.abubakarsiddique@gmail.com',
         subject: data.subject,
         html: htmlMessage
       }).then(() => {
