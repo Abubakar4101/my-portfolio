@@ -215,7 +215,7 @@ const Contact = ({isHovered}) => {
                                 </div>
                                 <div className="mt-4">
                                     {!values.name || !values.email || !values.subject || !values.message ? (
-                                        <button className="btn bg-slate-600 dark:bg-slate-300" disabled="disabled">
+                                        <button className="btn text-slate-400 bg-slate-600 dark:bg-slate-300" disabled="disabled">
                                             Send Enquiry
                                         </button>
                                     ) : (
