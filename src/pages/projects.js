@@ -30,7 +30,7 @@ const ProjectContainer = ({
             <motion.div className={`flex flex-col  gap-5 md:p-5 ${containerClass} border-2 border-solid border-dark dark:border-light rounded-3xl p-5 bg-light dark:bg-dark -translate-x-3 -translate-y-3`} whileHover={{transform: "translate(0rem, 0rem)"}}>
                 {/*<Image src={thumbnail} alt="Abubakar" className={`rounded-3xl bg-light ${imgClass} hover:cursor-pointer`} priority={false}/>*/}
                 <motion.div whileHover={{scale: 1.02}}>
-                    <Image src={thumbnail} alt="Abubakar" className={`rounded-3xl h-full bg-light dark:bg-dark hover:cursor-pointer`} priority={true}/>
+                    <Image src={thumbnail} alt="Abubakar" width={1500} height={720}  className={`rounded-3xl h-full bg-light dark:bg-dark hover:cursor-pointer object-cover`} priority={true}/>
                 </motion.div>
                 <div className="flex flex-col gap-3">
                     <span className="text-lg text-cyan-700 dark:text-blue-400 font-medium">
@@ -115,6 +115,19 @@ const Projects = ({isHovered}) => {
                                 isHovered={isHovered}
                             />
                         </div>
+                        <ProjectContainer
+                            thumbnail="/images/projects/real-fetch.png"
+                            typeOfProject={"CRUD App"}
+                            title={"Fetch Real-Time E-Commerce Data"}
+                            detail={"The dynamic CRUD app is an innovative e-commerce solution, built with Next.js and Tailwind CSS. It seamlessly fetches real-time product data from the MockAPI, displaying up-to-date information on products, prices, and availability. Its user-friendly interface allows effortless browsing, adding, updating, and removing items from the shopping cart for an intuitive and enjoyable experience. With robust CRUD functionality, the app ensures data accuracy and reliability, providing a smooth and responsive e-commerce experience for all users."}
+                            gitLink={"https://github.com/Abubakar4101/dynamically-fetch-API"}
+                            liveLink={"https://real-fetch.vercel.app/"}
+                            containerClass={"lg:flex-row"}
+                            gitBtn={"flex"}
+                            liveBtn={"relative"}
+                            typeOfLiveBtn={"Live"}
+                            isHovered={isHovered}
+                        />
                     </div>
                 </Layout>
             </main>
