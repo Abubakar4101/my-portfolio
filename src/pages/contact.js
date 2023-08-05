@@ -7,6 +7,8 @@ import Head from "next/head";
 import TransitionPage from "@/components/TransitionPage";
 import React, { useState} from "react";
 import {sendMail} from "@/lib/api";
+import Logo from "@/components/Logo";
+import Link from "next/link";
 
 const Contact = ({isHovered}) => {
     const initialValues = {
@@ -40,6 +42,7 @@ const Contact = ({isHovered}) => {
                 setTimeout(() => {
                     setMessageSend(false)
                 }, 4000)
+                setIsLoading(false);
             });
         }
         catch (error){
@@ -155,17 +158,41 @@ const Contact = ({isHovered}) => {
                         className={`flex flex-col lg:flex-row  border-2 border-solid border-dark dark:border-light rounded-3xl bg-light dark:bg-dark -translate-x-3 -translate-y-3`}
                         whileHover={{transform: "translate(0rem, 0rem)"}}>
                         <div className={`lg:w-[45%] sm:hidden rounded-2xl lg:flex bg-dark dark:bg-light`}>
-                            <Image
-                                src={thumbnail}
-                                alt="Abubakar"
-                                className={`rounded-tl-3xl rounded-tr-3xl lg:rounded-bl-3xl  lg:rounded-tr-none bg-light dark:bg-dark lg:object-cover`}
-                                priority
-                            />
+                            <section
+                                className="rounded-tl-3xl rounded-tr-3xl lg:rounded-tr-sm lg:rounded-bl-3xl relative w-full flex h-32 items-end bg-gray-900 lg:col-span-5 lg:h-full xl:col-span-6">
+                                <img
+                                    alt="Night"
+                                    src="https://images.unsplash.com/photo-1472148083604-64f1084980b9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                                    className="absolute rounded-tl-3xl rounded-tr-3xl lg:rounded-tr-sm lg:rounded-bl-3xl inset-0 h-full w-full object-cover opacity-80"
+                                />
+
+                                <div className="hidden lg:relative lg:block lg:p-12">
+                                    <Link href='/' className={`w-16 z-10 h-16 bg-light text-dark flex items-center justify-center rounded-full text-2xl font-bold`}
+                                    >
+                                        A.B
+                                    </Link>
+
+                                    <h2 className="mt-3 text-2xl font-bold text-white sm:text-3xl md:text-4xl">
+                                        Let&apos;s connect
+                                    </h2>
+                                </div>
+                            </section>
                         </div>
                         <div className="p-5 sm:p-10 lg:w-[55%]">
+                            <div className="relative -mt-16 sm:-mt-20  block lg:hidden">
+                                <Link href='/' className={`w-16 z-10 h-16 bg-dark dark:bg-light text-light dark:text-dark flex items-center justify-center rounded-full text-2xl font-bold`}
+                                >
+                                    A.B
+                                </Link>
+                                <h1
+                                    className="mt-5 mb-7 text-2xl text-center font-bold text-dark dark:text-light sm:text-3xl md:text-4xl"
+                                >
+                                    Let&apos;s Connect
+                                </h1>
+
+                            </div>
                             <form onSubmit={sendingMailHandler} className="space-y-4" onMouseOver={() => isHovered("hovered")} onMouseLeave={() => isHovered("default")}>
                                 <div>
-                                    <label className="sr-only" htmlFor="name">Name</label>
                                     <input
                                         className="w-full rounded-lg border-dark/80 text-dark dark:text-light dark:border-light/80 p-3 text-sm bg-light dark:bg-dark dark:placeholder:text-slate-400"
                                         placeholder="Name"
@@ -178,7 +205,6 @@ const Contact = ({isHovered}) => {
                                     />
                                 </div>
                                 <div>
-                                    <label className="sr-only" htmlFor="email">Name</label>
                                     <input
                                         className="w-full rounded-lg border-dark/80 text-dark dark:text-light dark:border-light/80 p-3 text-sm bg-light dark:bg-dark dark:placeholder:text-slate-400"
                                         placeholder="Email"
@@ -190,7 +216,6 @@ const Contact = ({isHovered}) => {
                                     />
                                 </div>
                                 <div>
-                                    <label className="sr-only" htmlFor="subject">Subject</label>
                                     <input
                                         className="w-full rounded-lg border-dark/80 text-dark dark:text-light dark:border-light/80 p-3 text-sm bg-light dark:bg-dark dark:placeholder:text-slate-400"
                                         placeholder="Subject"
@@ -202,7 +227,6 @@ const Contact = ({isHovered}) => {
                                     />
                                 </div>
                                 <div>
-                                    <label className="sr-only" htmlFor="message">Message</label>
                                     <textarea
                                         className="w-full rounded-lg border-dark/80 text-dark dark:text-light dark:border-light/80 p-3 text-sm bg-light dark:bg-dark dark:placeholder:text-slate-400"
                                         placeholder="Message"
@@ -215,7 +239,7 @@ const Contact = ({isHovered}) => {
                                 </div>
                                 <div className="mt-4">
                                     {!values.name || !values.email || !values.subject || !values.message ? (
-                                        <button className="btn dark:text-slate-500 bg-slate-600 dark:bg-slate-300" disabled="disabled">
+                                        <button className="btn flex items-center w-full sm:w-auto rounded-lg dark:text-slate-500 bg-slate-600 dark:bg-slate-300" disabled="disabled">
                                             Send Enquiry
                                         </button>
                                     ) : (
