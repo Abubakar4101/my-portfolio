@@ -5,7 +5,10 @@ import AnimeHeading from "@/components/AnimeHeading";
 import Image from "next/image";
 import formValidation from "../../public/images/projects/form-validation.jpg";
 import weatherApp from "../../public/images/projects/dynamic-weather.png";
+import ownlyEditor from "../../public/images/projects/ownly-editor.jpeg";
 import wordpressTutorial from "../../public/images/projects/wordpress-tutorial.png";
+import quizApp from "../../public/images/projects/quiz.png";
+import mobileApp from "../../public/images/projects/mobile.jpg"
 import Link from "next/link";
 import {motion} from "framer-motion";
 import { GithubIcon, LinkArrow} from "@/components/Icons";
@@ -23,7 +26,8 @@ const ProjectContainer = ({
                               liveBtn,
                               typeOfLiveBtn,
                               isHovered,
-                              detailPara
+                              detailPara,
+                              typeOfProjectDetail
                         }) => {
     return(
         <motion.div className=" bg-dark dark:bg-light rounded-3xl translate-x-3 translate-y-3" initial={{scale: 0}} whileInView={{scale: 1, transition: {duration: 1} }} viewport={{once: true}}>
@@ -33,23 +37,28 @@ const ProjectContainer = ({
                     <Image src={thumbnail} alt="Abubakar" width={1500} height={720}  className={`rounded-3xl h-full bg-light dark:bg-dark hover:cursor-pointer object-cover`} priority={true}/>
                 </motion.div>
                 <div className="flex flex-col gap-3">
-                    <span className="text-lg text-cyan-700 dark:text-blue-400 font-medium">
+                    <span className="text-lg text-cyan-700 dark:text-blue-400 font-bold">
                         {typeOfProject}
                     </span>
+                    <span className="text-lg text-cyan-700 dark:text-blue-400 font-medium">
+                        {typeOfProjectDetail}
+                    </span>
                     <h3 className="font-bold text-dark dark:text-light text-xl md:text-3xl">
-                        {title}<br />
+                        {title}<br/>
                     </h3>
                     <p className={`font-medium ${detailPara}  h-full whitespace-normal text-dark dark:text-light`}>
                         {detail}
                     </p>
                     <div className="flex items-center justify-center md:justify-start flex-col md:flex-row gap-3">
-                        <Link href={gitLink} target={"_blank"} className={`btn btn-neutral ${gitBtn} dark:text-dark dark:bg-light dark:border-light w-full md:w-auto`}
+                        <Link href={gitLink} target={"_blank"}
+                              className={`btn btn-neutral ${gitBtn} dark:text-dark dark:bg-light dark:border-light w-full md:w-auto`}
                               onMouseOver={() => isHovered("hovered")} onMouseLeave={() => isHovered("default")}
                         >
                             GitHub
-                            <GithubIcon className="w-5 h-5" />
+                            <GithubIcon className="w-5 h-5"/>
                         </Link>
-                        <Link href={liveLink} target={"_blank"} className={`btn btn-accent ${liveBtn} dark:btn-primary w-full md:w-auto`}
+                        <Link href={liveLink} target={"_blank"}
+                              className={`btn btn-accent ${liveBtn} dark:btn-primary w-full md:w-auto`}
                               onMouseOver={() => isHovered("hovered")} onMouseLeave={() => isHovered("default")}
                         >
                             {typeOfLiveBtn}
@@ -67,7 +76,7 @@ const Projects = ({isHovered}) => {
     return (
         <>
             <Head>
-                <title>Abubakar Siddique | Projects</title>
+            <title>Abubakar Siddique | Projects</title>
                 <meta name="description" content="Showcase of my latest projects."/>
             </Head>
             <TransitionPage/>
@@ -77,7 +86,43 @@ const Projects = ({isHovered}) => {
                         <AnimeHeading isHovered={isHovered} text={"Imagination Trumps Knowledge!"}/>
                     </div>
                     <div className="mt-14 mb-14 flex flex-col gap-16">
-
+                        <ProjectContainer
+                            thumbnail={ownlyEditor}
+                            typeOfProject={"Featured Project"}
+                            title={"Dynamic Printing Platform App"}
+                            detail={"Immerse yourself in the boundless creativity of Print Your Imagination! This innovative platform combines React, TypeScript, and Three.js to offer dynamic printing capabilities for a range of products, from T-shirts to mugs and beyond. Experience the magic of real-time 3D previews and effortlessly bring your ideas to life with seamless ordering. Explore the possibilities and unleash your imagination today!"}
+                            gitLink={"https://github.com/Abubakar4101/ownly-editor"}
+                            liveLink={"https://ownly-editor.vercel.app/"}
+                            containerClass={"lg:flex-row"}
+                            gitBtn={"flex"}
+                            liveBtn={"flex"}
+                            typeOfLiveBtn={"Live"}
+                            isHovered={isHovered}
+                        />
+                        <div className="flex flex-col lg:flex-row gap-16">
+                            <ProjectContainer
+                                thumbnail={mobileApp}
+                                typeOfProject={"Mobile App"}
+                                typeOfProjectDetail={"React Native App with OpenAI API and Firebase Authentication and Real-Time Database"}
+                                title={"An AI Based Job Seeker and Talent Hunt App"}
+                                gitLink={"https://github.com/Abubakar4101/MAD-Project"}
+                                liveLink={"/"}
+                                liveBtn={"hidden"}
+                                detailPara={"hidden"}
+                                isHovered={isHovered}
+                            />
+                            <ProjectContainer
+                                thumbnail={quizApp}
+                                typeOfProject={"Featured Project"}
+                                typeOfProjectDetail={"Next.js and Typescript App with Firebase Authentication and Real-Time Database"}
+                                title={"Quizzy: A Quiz Creation and Management App"}
+                                gitLink={"https://github.com/Abubakar4101/quizapp"}
+                                liveLink={"/"}
+                                liveBtn={"hidden"}
+                                detailPara={"hidden"}
+                                isHovered={isHovered}
+                            />
+                        </div>
                         <ProjectContainer
                             thumbnail={weatherApp}
                             typeOfProject={"Featured Project"}
