@@ -51,7 +51,7 @@ const About = ({isHovered}) => {
                                 </h2>
                                 <p className="pt-3 font-medium text-dark dark:text-light" onMouseOver={() => isHovered("hovered")} onMouseLeave={() => isHovered("default")}>
                                     Hi, I&apos;m M.Abubakar Siddique, a full stack web developer with a passion for creating beautiful, functional,
-                                    and user-centered digital experiences. With 2 years of professional experience in the field. I am always looking for
+                                    and user-centered digital experiences. With 4 years of professional experience in the field. I am always looking for
                                     new and innovative ways to bring my clients&apos; visions to life.
                                 </p>
                                 <p className="pt-3 font-medium text-dark dark:text-light" onMouseOver={() => isHovered("hovered")} onMouseLeave={() => isHovered("default")}>
